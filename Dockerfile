@@ -4,7 +4,7 @@ ADD fei.sh /fei.sh
 ADD xr /usr/local/bin/xr
 
 RUN apk update && \
-    apk add -f --no-cache ca-certificates wget bash && \
+    apk add -f --no-cache ca-certificates bash && \
     chmod 777 /fei.sh && \
     chmod 777 /usr/local/bin/xr
 
