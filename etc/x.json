@@ -1,8 +1,11 @@
 {
+    "log": {
+        "loglevel": "none"
+    },
 	"inbounds": [
         {
             "listen": "0.0.0.0",
-            "port": 8080,
+            "port": 9999,
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -14,7 +17,10 @@
                 "disableInsecureEncryption": false
             },
             "streamSettings": {
-                "network": "ws"
+                "network": "ws",
+                "wsSettings": {
+					"path": "/vmess"
+				}
             }
         },
 		{
