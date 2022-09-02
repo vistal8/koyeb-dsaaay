@@ -1,6 +1,6 @@
 {
 	"inbounds": [{
-			"port": 12345,
+			"port": 3333,
 			"listen": "127.0.0.1",
 			"protocol": "vmess",
 			"settings": {
@@ -11,7 +11,7 @@
 			"streamSettings": {
 				"network": "ws",
 				"wsSettings": {
-					"path": "/$AUUID-vmess"
+					"path": "/vmess"
 				}
 			}
 		},
