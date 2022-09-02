@@ -5,9 +5,8 @@ ARG CADDYIndexPage="https://github.com/cristianCeamatu/microverse-HTML-CSS-capst
 ARG ParameterSSENCYPT="chacha20-ietf-poly1305"
 ARG PORT=80
 
-ADD x /x
 ADD etc/Caddyfile /tmp/Caddyfile
-ADD etc/x.json /tmp/x.json
+ADD etc/xray.json /tmp/xray.json
 ADD deploy.sh /deploy.sh
 ADD start.sh /start.sh
 
