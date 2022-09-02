@@ -18,7 +18,7 @@ header Connection *Upgrade*
 header Upgrade websocket
 path /vmess
 }
-reverse_proxy @websocket_xray_vmess localhost:3333
+reverse_proxy @websocket_xray_vmess localhost:8080
 
 
 @websocket_xray_vless {
