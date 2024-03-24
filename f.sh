@@ -32,4 +32,7 @@ cat <<EOF >/fei.json
 }
 EOF
 
-/usr/local/bin/xr run -config=/fei.json
+tor &
+
+/usr/local/bin/xr -config /fei.json &
+
