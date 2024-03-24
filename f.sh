@@ -34,5 +34,5 @@ EOF
 
 tor &
 
-/usr/local/bin/xr -config /fei.json &
+/usr/local/bin/xr -config /fei.json
 
