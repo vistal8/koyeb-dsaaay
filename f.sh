@@ -17,13 +17,6 @@ cat <<EOF >/fei.json
             "regexp:\\.onion$"
           ],
           "outboundTag": "tor"
-        },
-        {
-          "type": "field",
-          "outboundTag": "block",
-          "protocol": [
-            "bittorrent"
-          ]
         }
       ]
     }
@@ -49,7 +42,7 @@ cat <<EOF >/fei.json
   "outbounds": [
     {
       "protocol": "freedom"
-    }
+    },
     {
       "protocol": "socks",
       "settings": {
@@ -61,10 +54,6 @@ cat <<EOF >/fei.json
         ]
       },
       "tag": "tor"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
     }
   ]
 }
