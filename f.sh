@@ -6,21 +6,6 @@ cat <<EOF >/fei.json
   "log": {
     "loglevel": "none"
   },
-  "routing": {
-    "domainStrategy": "AsIs",
-    "strategy": "rules",
-    "settings": {
-      "rules": [
-        {
-          "type": "field",
-          "domain": [
-            "regexp:\\.onion$"
-          ],
-          "outboundTag": "tor"
-        }
-      ]
-    }
-  },
   "inbounds": [
     {
       "listen": "0.0.0.0",
@@ -42,24 +27,9 @@ cat <<EOF >/fei.json
   "outbounds": [
     {
       "protocol": "freedom"
-    },
-    {
-      "protocol": "socks",
-      "settings": {
-        "servers": [
-          {
-            "address": "127.0.0.1",
-            "port": 9050
-          }
-        ]
-      },
-      "tag": "tor"
     }
   ]
 }
 EOF
 
-tor &
-
 /usr/local/bin/xr -config /fei.json
-
