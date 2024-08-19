@@ -17,6 +17,7 @@ RUN apt-get update && \
     chmod +x warp.sh && \
     ./warp.sh d && \
     rm warp.sh && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD /f.sh
