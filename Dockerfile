@@ -1,14 +1,22 @@
-FROM alpine:edge
-
+FROM debian:bookworm-slim
 
 ADD f.sh /f.sh
 ADD xr /usr/local/bin/xr
 
-RUN apk update && \
-    apk add -f --no-cache ca-certificates bash tor gzip && \
-    gzexe /f.sh && \
-    rm -rf /f.sh~ && \
-    chmod 777 /f.sh && \
-    chmod 777 /usr/local/bin/xr
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    ca-certificates \
+    bash \
+    tor \
+    gzip \
+    wget && \
+    gzip /f.sh && \
+    chmod +x /f.sh && \
+    chmod +x /usr/local/bin/xr && \
+    wget -O warp.sh git.io/warp.sh && \
+    chmod +x warp.sh && \
+    ./warp.sh d && \
+    rm warp.sh && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD /f.sh
