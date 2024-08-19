@@ -9,6 +9,7 @@ RUN apt-get update && \
     bash \
     tor \
     wireguard-tools \
+    iproute2 \
     gzip && \
     gzexe /f.sh && \
     chmod +x /f.sh && \
