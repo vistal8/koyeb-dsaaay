@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 启动 WireGuard
+wg-quick up wgcf
+
 # Set config file
 cat <<EOF >/fei.json
 {

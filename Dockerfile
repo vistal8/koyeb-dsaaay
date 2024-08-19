@@ -8,18 +8,17 @@ RUN apt-get update && \
     ca-certificates \
     bash \
     tor \
+    wireguard-tools \
     gzip \
-    wget \
-    curl \
-    systemd && \
     gzexe /f.sh && \
     chmod +x /f.sh && \
     chmod +x /usr/local/bin/xr && \
-    wget -O warp.sh git.io/warp.sh && \
-    chmod +x warp.sh && \
-    ./warp.sh d && \
-    rm warp.sh && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+
+ADD wgcf.conf /etc/wireguard/wgcf.conf
+
 
 CMD /f.sh
