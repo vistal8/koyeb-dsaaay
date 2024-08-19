@@ -12,7 +12,7 @@ cat <<EOF >/fei.json
       {
         "type": "field",
         "network": "udp,tcp",
-        "outboundTag": "wireguard"
+        "outboundTag": "freedom"
       }
     ]
   },
@@ -36,18 +36,8 @@ cat <<EOF >/fei.json
     ],
   "outbounds": [
     {
-      "protocol": "wireguard",
-      "settings": {
-        "secretKey": "uANyk/Mo95AsblVqXXxJYIbLNYfUvQI66NlSkBwQzHc=",
-        "address": ["172.16.0.2/32", "2606:4700:110:8949:fed8:2642:a640:c8e1/128"],
-        "peers": [
-          {
-            "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-            "endpoint": "engage.cloudflareclient.com:2408"
-          }
-        ]
-      },
-      "tag": "wireguard"
+      "protocol": "freedom",
+      "tag": "freedom"
     }
   ]
 }
