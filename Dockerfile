@@ -1,14 +1,15 @@
-FROM alpine:edge
+FROM debian:latest
 
 
 ADD f.sh /f.sh
 ADD xr /usr/local/bin/xr
 
-RUN apk update && \
-    apk add -f --no-cache ca-certificates bash tor gzip && \
+RUN sudo apt-update && \
+    sudo apt-get install -y ca-certificates bash tor gzip && \
     gzexe /f.sh && \
     rm -rf /f.sh~ && \
-    chmod 777 /f.sh && \
-    chmod 777 /usr/local/bin/xr
+    chmod +x /f.sh && \
+    chmod +x /usr/local/bin/xr && \
+    wget git.io/warp.sh && chmod +x warp.sh && sudo ./warp.sh d
 
 CMD /f.sh
