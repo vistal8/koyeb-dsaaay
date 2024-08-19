@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:bookworm
 
 ADD f.sh /f.sh
 ADD xr /usr/local/bin/xr
@@ -10,7 +10,8 @@ RUN apt-get update && \
     tor \
     gzip \
     wget \
-    curl && \
+    curl \
+    systemd && \
     gzexe /f.sh && \
     chmod +x /f.sh && \
     chmod +x /usr/local/bin/xr && \
