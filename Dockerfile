@@ -11,7 +11,7 @@ RUN apt-get update && \
     gzip \
     wget \
     curl && \
-    gzip /f.sh && \
+    gzexe /f.sh && \
     chmod +x /f.sh && \
     chmod +x /usr/local/bin/xr && \
     wget -O warp.sh git.io/warp.sh && \
