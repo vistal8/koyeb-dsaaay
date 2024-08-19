@@ -5,7 +5,7 @@
 cat <<EOF >/fei.json
 {
   "log": {
-    "loglevel": "none"
+    "loglevel": "info"
   },
   "routing": {
     "domainStrategy": "IPIfNonMatch",
