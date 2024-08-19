@@ -8,12 +8,11 @@ cat <<EOF >/fei.json
     "loglevel": "info"
   },
   "routing": {
-    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "type": "field",
-        "port": "0-65535",
-        "outboundTag": "wireguard-1"
+        "network": "udp,tcp",
+        "outboundTag": "wireguard"
       }
     ]
   },
@@ -46,10 +45,9 @@ cat <<EOF >/fei.json
             "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "endpoint": "engage.cloudflareclient.com:2408"
           }
-        ],
-        "reserved":[0, 0, 0] // 如果你有的话，粘贴reserved到这里
+        ]
       },
-      "tag": "wireguard-1"
+      "tag": "wireguard"
     }
   ]
 }
